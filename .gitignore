@@ -1,0 +1,17 @@
+# Whitelist approach: ignore everything by default, then allow only own files.
+# This keeps the copyrighted CS:APP handout (mdriver.c, memlib.c, traces/, ...)
+# and all build artifacts out of the repository.
+*
+
+# Allow subdirectories to be traversed (files inside are still ignored)
+!*/
+
+# Own files
+!.gitignore
+!mm.c
+
+# Never commit build artifacts, even if whitelisted by accident
+*.o
+mdriver
+*.out
+gmon.out
